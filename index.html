@@ -58,21 +58,21 @@ body{font-family:'Rajdhani',sans-serif;background:var(--navy);color:var(--text);
 /* ══════════════════════════════════════
    NAVBAR
 ══════════════════════════════════════ */
-.nav{position:fixed;top:0;left:0;right:0;z-index:900;padding:18px 24px;display:flex;align-items:center;justify-content:space-between;transition:all 0.4s;}
-.nav.scrolled{background:rgba(3,7,15,0.95);backdrop-filter:blur(20px);padding:12px 24px;border-bottom:1px solid var(--border);}
+.nav{position:fixed;top:0;left:0;right:0;z-index:900;padding:18px 24px;display:flex;align-items:center;justify-content:center;transition:all 0.4s;}
+.nav.scrolled{background:rgba(3,7,15,0.95);backdrop-filter:blur(20px);padding:12px 24px;border-bottom:1px solid var(--border);justify-content:center;}
 .nav.scrolled::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--blue),var(--gold),var(--blue),transparent);}
-.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;position:absolute;left:50%;transform:translateX(-50%);}
 .nav-logo-icon{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--navy3),var(--navy2));border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;font-size:18px;box-shadow:0 0 14px rgba(251,191,36,0.3);}
 .nav-logo-text{font-family:'Cinzel',serif;font-size:14px;font-weight:900;color:#fff;letter-spacing:3px;text-shadow:0 0 12px rgba(56,189,248,0.4);}
 .nav-logo-sub{font-size:7px;color:var(--gold);letter-spacing:2px;text-transform:uppercase;display:block;margin-top:-1px;}
-.nav-links{display:flex;gap:28px;align-items:center;}
+.nav-links{display:flex;gap:28px;align-items:center;margin-right:auto;flex:1;}
 .nav-link{font-family:'Cinzel',serif;font-size:10px;font-weight:700;letter-spacing:2px;color:rgba(226,240,255,0.6);text-decoration:none;text-transform:uppercase;transition:all 0.3s;position:relative;}
 .nav-link::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;background:linear-gradient(90deg,var(--blue),var(--gold));transition:width 0.3s;}
 .nav-link:hover{color:#fff;}
 .nav-link:hover::after{width:100%;}
 .nav-cta{font-family:'Cinzel',serif;font-size:10px;font-weight:700;letter-spacing:2px;color:#000;background:linear-gradient(135deg,var(--blue),var(--blue2));border:none;border-radius:6px;padding:8px 16px;cursor:pointer;transition:all 0.3s;box-shadow:0 0 16px rgba(56,189,248,0.3);}
 .nav-cta:hover{box-shadow:0 0 28px rgba(56,189,248,0.5);transform:translateY(-1px);}
-.nav-mobile-btn{display:none;flex-direction:column;gap:4px;cursor:pointer;padding:4px;}
+.nav-mobile-btn{display:none;flex-direction:column;gap:4px;cursor:pointer;padding:4px;position:absolute;right:24px;}
 .nav-mobile-btn span{width:22px;height:2px;background:var(--blue);border-radius:1px;transition:all 0.3s;}
 
 /* ══════════════════════════════════════
@@ -218,14 +218,14 @@ section{padding:80px 0;}
 ══════════════════════════════════════ */
 #gallery{background:linear-gradient(180deg,var(--navy2) 0%,var(--navy) 100%);}
 .gallery-header{text-align:center;margin-bottom:40px;}
-.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:auto;gap:10px;}
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:200px;gap:10px;grid-auto-flow:dense;}
 .gallery-item{border-radius:14px;overflow:hidden;position:relative;cursor:pointer;background:var(--navy3);}
 .gallery-item:nth-child(1){grid-row:span 2;}
 .gallery-item:nth-child(4){grid-column:span 2;}
 .gallery-thumb{width:100%;height:100%;min-height:200px;display:flex;align-items:center;justify-content:center;font-size:48px;background:linear-gradient(135deg,var(--navy3),var(--navy2));position:relative;overflow:hidden;}
 .gallery-thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 0.6s ease;}
 .gallery-item:hover .gallery-thumb img{transform:scale(1.1);}
-.gallery-item:nth-child(1) .gallery-thumb{min-height:420px;}
+.gallery-item:nth-child(1) .gallery-thumb{min-height:100%;}
 .gallery-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(3,7,15,0.85) 0%,rgba(3,7,15,0.1) 60%);opacity:0.4;transition:opacity 0.3s;}
 .gallery-item:hover .gallery-overlay{opacity:1;}
 .gallery-label{position:absolute;bottom:14px;left:16px;font-family:'Cinzel',serif;font-size:11px;color:#fff;letter-spacing:2px;opacity:0;transform:translateY(8px);transition:all 0.35s;text-shadow:0 2px 8px rgba(0,0,0,0.8);}
@@ -531,8 +531,8 @@ footer::before{content:'';display:block;height:2px;background:linear-gradient(90
     <a href="#faq" class="nav-link">FAQ</a>
     <a href="#contact" class="nav-link">Contact</a>
   </div>
-  <div style="display:flex;gap:10px;">
-    <a href="https://tamilselvi8bdx-143.github.io/-SPORTS-HUB-/index.html" target="_blank" style="text-decoration:none;"><button class="nav-cta" style="background:linear-gradient(135deg,var(--gold),var(--gold2));">SPORTS HUB</button></a>
+  <div style="display:flex;gap:10px;margin-left:auto;flex:1;justify-content:flex-end;">
+    <a href="https://uyirkalaisportsacademy.github.io/-SPORTS-HUB-/index.html" target="_blank" style="text-decoration:none;"><button class="nav-cta" style="background:linear-gradient(135deg,var(--gold),var(--gold2));">SPORTS HUB</button></a>
     <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">JOIN NOW</button>
   </div>
   <div class="nav-mobile-btn" onclick="document.getElementById('mobileMenu').classList.toggle('open')">
@@ -608,7 +608,8 @@ footer::before{content:'';display:block;height:2px;background:linear-gradient(90
     </h1>
     <p class="hero-sub">Build discipline, power, and confidence — train with the champions</p>
     <div class="hero-btns">
-      <a href="#contact" class="btn-primary">Join Now →</a>
+      <a href="https://uyirkalaisportsacademy.github.io/-SPORTS-HUB-/index.html" target="_blank" class="btn-primary" style="background:linear-gradient(135deg,var(--gold),var(--gold2));">Sports Hub App →</a>
+      <a href="#contact" class="btn-primary">Join Now</a>
       <a href="#programs" class="btn-outline">Our Programs</a>
     </div>
   </div>
@@ -911,6 +912,22 @@ footer::before{content:'';display:block;height:2px;background:linear-gradient(90
     </div>
     <div style="text-align:center;margin-top:40px;color:var(--muted);font-size:13px;letter-spacing:1px;" id="gallery-note">
       📸 Add posts with images in the admin app — they appear here automatically
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ══ YOUTUBE VIDEOS ══ -->
+<section id="videos" style="display:none;background:#050508;">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:40px;" class="reveal">
+      <div class="section-tag" style="justify-content:center;"><div class="section-tag-line"></div><div class="section-tag-text">Featured Videos</div><div class="section-tag-line" style="transform:scaleX(-1)"></div></div>
+      <h2 class="section-title">Academy <span>Showcase</span></h2>
+      <p class="section-sub" style="margin:0 auto;max-width:500px;">Watch our techniques, events, and masterclasses</p>
+    </div>
+    <div id="video-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;" class="reveal">
+       <!-- dynamically populated -->
     </div>
   </div>
 </section>
@@ -1663,7 +1680,7 @@ function renderStudents(searchOverride) {
     if(window.ukLiveAttendance) {
       Object.keys(window.ukLiveAttendance).forEach(date=>{
         const dRec=window.ukLiveAttendance[date];
-        if(dRec[st.id]){total++;if(dRec[st.id]==='P')present++;}
+        if(dRec[st.id]){total++;if(dRec[st.id]==='P' || dRec[st.id]==='present')present++;}
       });
     }
     const acStr = (window.ukLiveAchievements||[]).filter(a=>a.student_id===st.id).length;
@@ -1687,6 +1704,32 @@ function renderStudents(searchOverride) {
 document.addEventListener("DOMContentLoaded", () => {
   setTimeout(() => { if(!currentRosterBranch) showRosterBranches(); }, 1000);
 });
+
+function renderVideoShowcase(vids){
+  const sec = document.getElementById('videos');
+  const grid = document.getElementById('video-grid');
+  if(!sec || !grid) return;
+  sec.style.display = 'block';
+  grid.innerHTML = vids.map(v => {
+    let embedUrl = v.url;
+    if(v.url.includes('youtube.com/watch')){
+      const vid=v.url.split('v=')[1]?.split('&')[0];
+      if(vid)embedUrl=`https://www.youtube.com/embed/${vid}`;
+    }else if(v.url.includes('youtu.be/')){
+      const vid=v.url.split('youtu.be/')[1]?.split('?')[0];
+      if(vid)embedUrl=`https://www.youtube.com/embed/${vid}`;
+    }
+    return `<div style="background:#020510;border:1px solid rgba(0,204,255,0.1);border-radius:12px;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,0.5);">
+      <div style="position:relative;padding-bottom:56.25%;height:0;">
+        <iframe src="${embedUrl}" style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;" allowfullscreen></iframe>
+      </div>
+      <div style="padding:16px;">
+        <div style="font-family:'Cinzel',serif;color:var(--gold);font-size:16px;font-weight:700;margin-bottom:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${v.title}</div>
+        <div style="font-size:12px;color:rgba(226,240,255,0.5);">Uyir Kalai Martial Arts</div>
+      </div>
+    </div>`;
+  }).join('');
+}
 
 /* ══ FIREBASE DATA ══ */
 (async()=>{
@@ -1773,19 +1816,31 @@ document.addEventListener("DOMContentLoaded", () => {
               }).join('');
             }
           }
-          // ── Gallery: Firebase posts with images → update FIRST N slots (keep generated images for rest) ──
-          const galleryPosts = posts.filter(p=>(p.img||p.poster)&&p.type!=='live').sort((a,b)=>(b.ts||0)-(a.ts||0)).slice(0,6);
-          if(galleryPosts.length > 0){
+          // ── Gallery: HD Website Editor photos strictly overrule Admin App Feed posts ──
+          let isHdGallery = false;
+          let galleryData = [];
+          if(d.web_gal){
+            try{ galleryData = JSON.parse(d.web_gal).slice(0,6); if(galleryData.length>0) isHdGallery=true; }catch(e){}
+          }
+          if(!isHdGallery){
+             galleryData = posts.filter(p=>(p.img||p.poster)&&p.type!=='live').sort((a,b)=>(b.ts||0)-(a.ts||0)).slice(0,6);
+          }
+
+          if(galleryData.length > 0){
             const grid = document.getElementById('gallery-dynamic-grid');
             const note = document.getElementById('gallery-note');
             if(grid){
               const labels={event:'EVENT',result:'CHAMPIONSHIP',notice:'NOTICE',general:'TRAINING'};
               const staticItems = Array.from(grid.querySelectorAll('.gallery-item'));
-              // Update only first N slots with Firebase photos — remaining slots keep generated images
-              galleryPosts.forEach((p, i) => {
+              galleryData.forEach((p, i) => {
                 if(i < staticItems.length){
-                  const imgSrc = p.poster||p.img;
-                  const lbl = (p.text||'').replace(/<[^>]*>/g,'').substring(0,30).toUpperCase() || labels[p.type]||'ACADEMY';
+                  const imgSrc = p.photo || p.poster || p.img;
+                  let lbl = p.tag || '';
+                  if(!lbl){
+                    lbl = (p.text||'').replace(/<[^>]*>/g,'').substring(0,30).toUpperCase() || labels[p.type]||'ACADEMY';
+                  }else{
+                    lbl = lbl.toUpperCase();
+                  }
                   staticItems[i].onclick = () => openGalleryLightbox(imgSrc, lbl);
                   const thumb = staticItems[i].querySelector('.gallery-thumb');
                   if(thumb) thumb.innerHTML = `<img src="${imgSrc}" alt="${lbl}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 0.6s ease;" loading="lazy"/>`;
@@ -1793,10 +1848,39 @@ document.addEventListener("DOMContentLoaded", () => {
                   if(labelEl) labelEl.textContent = lbl;
                 }
               });
-              if(note) note.textContent = `📸 ${galleryPosts.length} real photo${galleryPosts.length>1?'s':''} synced from admin app`;
+              if(note) note.textContent = isHdGallery 
+                ? `📸 ${galleryData.length} HD photo${galleryData.length>1?'s':''} uploaded by Academy Master` 
+                : `📸 ${galleryData.length} photo${galleryData.length>1?'s':''} synced from admin app timeline`;
             }
           }
-        }catch(e){}
+          
+          // ── Programs Master Images ──
+          if(d.web_prog){
+            try{
+              const progs = JSON.parse(d.web_prog);
+              document.querySelectorAll('.prog-card').forEach(card => {
+                const nameEl = card.querySelector('.prog-name');
+                if(nameEl){
+                  const progName = nameEl.textContent.trim();
+                  const matchKey = Object.keys(progs).find(k => k.toLowerCase() === progName.toLowerCase());
+                  if(matchKey && progs[matchKey].photo){
+                    card.style.backgroundImage = `linear-gradient(rgba(2,5,16,0.75), rgba(2,5,16,0.95)), url(${progs[matchKey].photo})`;
+                    card.style.backgroundSize = 'cover';
+                    card.style.backgroundPosition = 'center';
+                  }
+                }
+              });
+            }catch(e){}
+          }
+
+          // ── Videos Showcase ──
+          if(d.web_vid){
+            try{
+              const vids = JSON.parse(d.web_vid);
+              if(vids.length > 0) renderVideoShowcase(vids);
+            }catch(e){}
+          }
+        }catch(e){console.error(e)}
       }
     });
   }catch(e){console.log('Firebase:',e);}
